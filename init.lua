@@ -276,6 +276,12 @@ vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "Find word under
 -- Quality of life keymaps
 -- =========================
 
+-- Ctrl+Backspace → delete previous word
+vim.keymap.set("i", "<C-H>", "<C-w>", { noremap = true })
+
+-- Ctrl+Delete → delete next word
+vim.keymap.set("i", "<C-Del>", "<C-o>de", { noremap = true })
+
 -- Toggle file tree
 vim.keymap.set("n", "<leader>b", function()
   require("nvim-tree.api").tree.toggle({ focus = false })
