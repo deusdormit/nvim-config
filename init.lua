@@ -272,6 +272,15 @@ cmp.setup({
 })
 
 -- =========================
+-- Diagnostic
+-- =========================
+vim.diagnostic.config({
+  virtual_text = true, -- show inline text
+  signs = true,        -- show in sign column
+  float = { border = "rounded" },
+})
+
+-- =========================
 -- Telescope keymaps
 -- =========================
 local builtin = require("telescope.builtin")
