@@ -127,6 +127,7 @@ vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 
 vim.g.mapleader = " "
+vim.o.winbar = "%f"
 
 -- Cursor shape per mode
 vim.opt.guicursor = {
