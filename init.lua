@@ -61,6 +61,7 @@ require("lazy").setup({
         html = { "prettier" },
         css = { "prettier" },
         markdown = { "prettier" },
+        yaml = { "prettier" },
       },
       format_on_save = {
         timeout_ms = 1000,
