@@ -115,6 +115,19 @@ require("lazy").setup({
       require("trouble").setup({})
     end,
   },
+
+  {
+    "gcmt/cmdfix.nvim",
+    config = function()
+      require("cmdfix").setup({
+        Bda = "bda",
+        Format = "format",
+        FixImports = "fiximports",
+        SortImports = "sortimports",
+        RemoveUnused = 'removeunused'
+      })
+    end,
+  },
 })
 
 -- =========================
@@ -385,3 +398,6 @@ vim.api.nvim_create_user_command("FixImports", function()
   remove_unused(0)
   organize_imports(0)
 end, { desc = "Sort and remove unused imports" })
+
+-- Clear all buffers
+vim.api.nvim_create_user_command("Bda", "bufdo bw", { bang = true })
