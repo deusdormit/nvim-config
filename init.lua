@@ -180,10 +180,19 @@ require("lualine").setup({
 
 -- Nvim-tree
 require("nvim-tree").setup({
+  actions = {
+    open_file = {
+      resize_window = false
+    }
+  },
   update_focused_file = {
     enable = true,
     update_root = false,
     ignore_list = {},
+  },
+  view = {
+    width = 50,
+    preserve_window_proportions = true,
   },
   filters = {
     git_ignored = false,
