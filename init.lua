@@ -374,7 +374,7 @@ vim.keymap.set("n", "<leader>ee", "<C-w>l", { noremap = true, silent = true, des
 vim.keymap.set("n", "<C-p>", ":Telescope find_files<CR>", { noremap = true, silent = true, desc = "Quick Open" })
 
 -- Adjust Nvim Tree Width
-vim.keymap.set("n", "<leader>+", "<cmd>vertical resize +5<CR>", { desc = "Increase NvimTree width" })
+vim.keymap.set("n", "<leader>=", "<cmd>vertical resize +5<CR>", { desc = "Increase NvimTree width" })
 vim.keymap.set("n", "<leader>-", "<cmd>vertical resize -5<CR>", { desc = "Decrease NvimTree width" })
 
 -- Format
