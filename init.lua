@@ -216,7 +216,7 @@ require("nvim-tree").setup({
     ignore_list = {},
   },
   view = {
-    width = 50,
+    width = 35,
     preserve_window_proportions = true,
   },
   filters = {
