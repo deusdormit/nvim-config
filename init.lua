@@ -210,6 +210,12 @@ require("nvim-tree").setup({
       resize_window = false
     }
   },
+  tab = {
+    sync = {
+      open = true,  -- open tree in all tabs
+      close = true, -- close tree in all tabs when last tab closes
+    },
+  },
   update_focused_file = {
     enable = true,
     update_root = false,
