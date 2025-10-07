@@ -122,6 +122,8 @@ require("lazy").setup({
         },
       }
 
+      dap.adapters.node = dap.adapters["pwa-node"]
+
       dap.configurations.javascript = {
         {
           name = "Launch current file",
