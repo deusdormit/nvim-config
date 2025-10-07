@@ -277,10 +277,6 @@ require("nvim-tree").setup({
     vim.keymap.set("n", "V", api.node.open.vertical, opts("Open: Vertical Split"))
     vim.keymap.set("n", "S", api.node.open.horizontal, opts("Open: Horizontal Split"))
     vim.keymap.set("n", "T", api.node.open.tab, opts("Open: New Tab"))
-
-    -- (optional) quick help and go-up mappings
-    -- vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
-    -- vim.keymap.set("n", "-", api.tree.change_root_to_parent, opts("Up"))
   end,
   actions = {
     open_file = {
