@@ -500,16 +500,11 @@ vim.api.nvim_create_user_command("Format", function()
   require("conform").format({ async = true, lsp_fallbask = true })
 end, { desc = "Format current buffer" })
 
+-- Diagnostics
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostics under cursor" })
 
--- F12 → go to definition
-vim.keymap.set("n", "<F12>", vim.lsp.buf.definition, { noremap = true, silent = true, desc = "Go to definition" })
-
--- Shift+F12 → references (like VSCode)
-vim.keymap.set("n", "<S-F12>", vim.lsp.buf.references, { noremap = true, silent = true, desc = "Find references" })
-
--- Alt+F12 → hover (like peek)
-vim.keymap.set("n", "<A-F12>", vim.lsp.buf.hover, { noremap = true, silent = true, desc = "Hover info" })
+-- Clear all buffers
+vim.api.nvim_create_user_command("Bda", "bufdo bw", { bang = true })
 
 -- =========================
 -- TypeScript Import Helpers
@@ -543,6 +538,3 @@ vim.api.nvim_create_user_command("FixImports", function()
   remove_unused()
   organize_imports(0)
 end, { desc = "Sort and remove unused imports" })
-
--- Clear all buffers
-vim.api.nvim_create_user_command("Bda", "bufdo bw", { bang = true })
