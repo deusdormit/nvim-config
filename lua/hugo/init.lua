@@ -6,8 +6,8 @@ require("hugo.lazy")
 -- =========================
 -- UI
 -- =========================
-require("hugo.core.keymaps")
 require("hugo.core.options")
+require("hugo.core.keymaps")
 
 -- =========================
 -- UI
