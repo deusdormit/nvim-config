@@ -25,6 +25,18 @@ local lazy_plugins = {
   "hrsh7th/cmp-nvim-lsp-signature-help",
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
+  {
+    "windwp/nvim-ts-autotag",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {},
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        autotag = {
+          enable = true
+        }
+      })
+    end,
+  },
 
   -- Syntax
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
