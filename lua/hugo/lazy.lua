@@ -79,13 +79,40 @@ local lazy_plugins = {
     dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
     config = function()
       require("noice").setup({
-        presets = { command_palette = true, long_message_to_split = true },
+        presets = { bottom_search = true, command_palette = true, long_message_to_split = true, inc_rename = true },
         views = {
-          mini = { win_options = { winblend = 0 } },
+          lsp = {
+            progress = { enabled = false },
+            hover = { enabled = true },
+            signature = { enabled = true },
+          },
+          messages = {
+            enaled = true,
+            view = "notify",
+            view_error = "notify",
+            view_warn = "notify",
+            view_history = "split",
+          },
+          notify = {
+            enabled = true,
+            view = "notify",
+          },
+          views = {
+            notify = {
+              replace = true,
+              merge = false,
+              win_options = { winblend = 0 },
+            }
+          },
           cmdline_popup = {
             border = { style = "rounded", text = { top = " COMMAND " } },
             position = { row = 1, col = "50%" },
-            size = { width = 60 },
+            size = { width = 80, height = "auto" },
+            win_options = {
+              wrap = true,
+              linebreak = true,
+              winblend = 0
+            }
           },
         },
       })
