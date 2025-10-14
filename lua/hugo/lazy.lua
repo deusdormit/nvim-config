@@ -46,7 +46,20 @@ local lazy_plugins = {
   "nvim-lualine/lualine.nvim",
   "nvim-telescope/telescope.nvim",
   "nvim-lua/plenary.nvim",
-  "lewis6991/gitsigns.nvim",
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "BufReadPost",
+    opts = {
+      -- Inline blame config
+      current_line_blame = true,
+      current_line_blame_opts = {
+        delay = 500,
+        virt_text_pos = "eol",
+        ignore_whitespace = true
+      },
+      current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> • <summary>",
+    },
+  },
 
   {
     "Mofiqul/vscode.nvim",
