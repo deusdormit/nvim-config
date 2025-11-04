@@ -1,1 +1,1 @@
-require("hugo")
+require("freya")

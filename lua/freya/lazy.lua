@@ -153,11 +153,11 @@ local lazy_plugins = {
     end,
   },
 
-  require("hugo.plugins.format"),
-  require("hugo.plugins.debug"),
-  require("hugo.ui.theme"),
+  require("freya.plugins.format"),
+  require("freya.plugins.debug"),
+  require("freya.ui.theme"),
 }
 
-vim.list_extend(lazy_plugins, require("hugo.plugins.essentials"))
+vim.list_extend(lazy_plugins, require("freya.plugins.essentials"))
 
 require("lazy").setup(lazy_plugins)
