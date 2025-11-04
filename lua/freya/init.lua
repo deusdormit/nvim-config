@@ -17,7 +17,6 @@ require('freya.ui.lualine')
 require('freya.ui.nvim_tree')
 require("freya.ui.nvim_treesitter")
 require('freya.ui.telescope')
-require('freya.ui.theme')
 
 -- =========================
 -- Tools

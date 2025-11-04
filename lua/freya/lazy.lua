@@ -62,32 +62,6 @@ local lazy_plugins = {
   },
 
   {
-    "Mofiqul/vscode.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("vscode").setup({
-        transparent = false,
-        italic_comments = true,
-        disable_nvimtree_bg = true,
-        color_overrides = {
-          vscLineNumber = "#3E4451",
-          vscCursorLine = "#1f2233",
-          vscDiffAdded = "#00e5ff",
-          vscDiffChanged = "#00b3ff",
-        },
-        group_overrides = {
-          CursorLine = { bg = "#0f111a" },
-          NormalFloat = { bg = "#0f111a" },
-          FloatBorder = { fg = "#00e5ff", bg = "#0f111a" },
-          PmenuSel = { bg = "#00b3ff", fg = "#0f111a" },
-        },
-      })
-      vim.cmd("colorscheme vscode")
-    end,
-  },
-
-  {
     "folke/noice.nvim",
     dependencies = { "MunifTanjim/nui.nvim" },
     config = function()
@@ -153,9 +127,29 @@ local lazy_plugins = {
     end,
   },
 
+  {
+	  "projekt0n/github-nvim-theme",
+	  name = "github-theme",
+	  lazy = false,
+	  priority = 1000,
+	  config = function()
+		  require("github-theme").setup({
+			  options = {
+				  styles = {
+					  comments = "italic",
+					  keywords = "bold",
+					  functions = "bold",
+					},
+				},
+			})
+			vim.cmd("colorscheme github_dark_default")
+		end,
+
+  },
+
   require("freya.plugins.format"),
   require("freya.plugins.debug"),
-  require("freya.ui.theme"),
+  
 }
 
 vim.list_extend(lazy_plugins, require("freya.plugins.essentials"))
