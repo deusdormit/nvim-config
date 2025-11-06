@@ -13,7 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_plugins = {
   -- LSP + tooling
-  { "williamboman/mason.nvim",         build = ":MasonUpdate" },
+  { "williamboman/mason.nvim",
+  build = ":MasonUpdate" },
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
 
@@ -40,6 +41,19 @@ local lazy_plugins = {
 
   -- Syntax
   { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+
+  -- Git
+  {
+  "NeogitOrg/neogit",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "sindrets/diffview.nvim",
+    "nvim-telescope/telescope.nvim",
+  },
+   config = function()
+    require("freya.tools.neogit")
+  end,
+},
 
   -- UI
   "nvim-tree/nvim-tree.lua",
@@ -79,17 +93,10 @@ local lazy_plugins = {
             signature = { enabled = true },
           },
           messages = {
-            enaled = false,
+            enabled = false,
           },
           notify = {
             enabled = false,
-          },
-          views = {
-            -- notify = {
-            --   replace = true,
-            --   merge = false,
-            --   win_options = { winblend = 0 },
-            -- }
           },
           cmdline_popup = {
             border = { style = "rounded", text = { top = " COMMAND " } },
@@ -154,4 +161,10 @@ local lazy_plugins = {
 
 vim.list_extend(lazy_plugins, require("freya.plugins.essentials"))
 
-require("lazy").setup(lazy_plugins)
+require("lazy").setup(lazy_plugins, {
+  rocks = {
+    enabled = true,
+    hererocks = true,
+  }
+})
+

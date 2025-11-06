@@ -26,6 +26,7 @@ require('freya.tools.autocomplete')
 require('freya.tools.debug')
 require('freya.tools.lsp')
 require("freya.tools.mason")
+require("freya.tools.neogit")
 
 -- =========================
 -- Languages
