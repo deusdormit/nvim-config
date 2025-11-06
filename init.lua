@@ -1,1 +1,1 @@
-require("freya")
+require("test")
