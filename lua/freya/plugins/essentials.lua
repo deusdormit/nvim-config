@@ -38,19 +38,19 @@ local essentials = {
     end,
   },
 
-  -- {
-  --   "gcmt/cmdfix.nvim",
-  --   config = function()
-  --     require("cmdfix").setup({
-  --       Bda = "bda",
-  --       Format = "format",
-  --       FixImports = "fiximports",
-  --       SortImports = "sortimports",
-  --       RemoveUnused = 'removeunused',
-  --       Lazy = "Lazy",
-  --     })
-  --   end,
-  -- }
+  {
+    "gcmt/cmdfix.nvim",
+    config = function()
+      require("cmdfix").setup({
+        Bda = "bda",
+        Format = "format",
+        FixImports = "fiximports",
+        SortImports = "sortimports",
+        RemoveUnused = 'removeunused',
+        Lazy = "Lazy",
+      })
+    end,
+  }
 }
 
 return essentials

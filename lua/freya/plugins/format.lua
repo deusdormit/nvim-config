@@ -1,4 +1,9 @@
-local format_config = {
+local is_windows = vim.loop.os_uname().version:match("Windows")
+local prettier_cmd = is_windows
+    and "C:\\Users\\F081804\\AppData\\Roaming\\npm\\prettier.cmd"
+    or "prettier"
+
+return {
   "stevearc/conform.nvim",
   opts = {
     formatters_by_ft = {
@@ -18,21 +23,17 @@ local format_config = {
     },
     formatters = {
       prettier = {
-        command = "prettier",
-        args = { "--stdin-filepath", "$FILENAME", "--single-quote" },
+        command = prettier_cmd,
+        args = { "--stdin-filepath", "$FILENAME", "--single-quote", "--trailing-comma", "es5" },
+        stdin = true,
       },
     },
   },
+  config = function(_, opts)
+    require("conform").setup(opts)
+
+    vim.api.nvim_create_user_command("Format", function()
+      require("conform").format({ async = true, lsp_fallback = true })
+    end, { desc = "Format current buffer" })
+  end,
 }
-
--- =========================
--- Keymaps
--- =========================
-
--- Format
-vim.api.nvim_create_user_command("Format", function()
-  require("conform").format({ async = true, lsp_fallbask = true })
-end, { desc = "Format current buffer" })
-
-
-return format_config
