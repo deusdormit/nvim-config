@@ -1,8 +1,3 @@
-local is_windows = vim.loop.os_uname().version:match("Windows")
-local prettier_cmd = is_windows
-    and "C:\\Users\\F081804\\AppData\\Roaming\\npm\\prettier.cmd"
-    or "prettier"
-
 return {
   "stevearc/conform.nvim",
   opts = {
@@ -23,7 +18,7 @@ return {
     },
     formatters = {
       prettier = {
-        command = prettier_cmd,
+        command = "prettier",
         args = { "--stdin-filepath", "$FILENAME", "--single-quote", "--trailing-comma", "es5" },
         stdin = true,
       },
